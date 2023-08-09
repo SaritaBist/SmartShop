@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate COnfiguration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="connection.username">smartshop</property>
+        <property name="connection.password">smartshop</property>
+        <property name="connection.url">jdbc:oracle:thin:@//SARITA:1521/XE</property>
+        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="hbm2ddl.auto" >update</property>
+        <property name="show_sql" >true</property>
+        <mapping class="MyEntity.Users"/>
+        <mapping class="MyEntity.Category"/>
+        <mapping class="MyEntity.Product"/>
+        <mapping class="MyEntity.Order"/>
+        <mapping class="MyEntity.Review"/>
+       
+    </session-factory>
+</hibernate-configuration>
+
+
+
+

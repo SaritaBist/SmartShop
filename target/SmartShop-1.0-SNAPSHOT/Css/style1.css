@@ -1,0 +1,12 @@
+.admin .card
+{
+    border: 1px solid #283593;
+}
+.admin .card:hover{
+  background-color: #e2e2e2;
+    cursor: pointer;
+}
+.discount-label{
+    font-size: 10px!important;
+    font-style: italic!important;
+}

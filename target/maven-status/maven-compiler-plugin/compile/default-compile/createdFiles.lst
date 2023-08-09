@@ -1,0 +1,13 @@
+MyEntity\Users.class
+com\company\servlets\AddCategoryServlet.class
+MyEntity\Category.class
+com\company\servlets\LogoutServlet.class
+com\company\servlets\AddProductServlet.class
+com\company\dao\UserDao.class
+MyEntity\Product.class
+com\company\dao\CategoryDao.class
+com\company\dao\ProductDao.class
+com\company\servlets\Registration.class
+com\mycompany\Handler\FactoryProvider.class
+com\mycompany\Handler\handler.class
+com\company\servlets\LoginServlet.class

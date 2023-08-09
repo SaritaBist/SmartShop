@@ -1,0 +1,14 @@
+.custom_bg
+{
+   background-color:#283593;
+}
+ .myform .form_control
+{
+    color:rgba(0,0,0,.85);
+    border-bottom-color: rgba(0,0,0,.47);
+    box-shadow: none !important;
+    border-bottom: 1px solid;
+}
+
+
+

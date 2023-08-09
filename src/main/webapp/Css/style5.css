@@ -1,0 +1,63 @@
+.items{
+    font-size: 22px;
+    font-weight: bold;
+       border:2px solid #e2e2e2;
+    font-family:'Ysabeau Infant', sans-serif;
+
+}
+/*.change-btn:hover {
+    background-color: black;
+    color: white;
+    height:35px;
+    border-radius:15px;
+}*/
+.change-font
+{
+    font-size: 17px;
+    font-weight: 600;
+
+}
+.change-font:hover
+{
+    text-decoration: underline;
+
+}
+
+.myform
+{
+    height:380px;
+   
+}
+.myform2{
+    height:500px;
+}
+.myform .form-control
+{
+    color:rgba(0,0,0,.85);
+    border: none;
+    border-bottom-color: rgba(0,0,0,.47);
+    box-shadow: none !important;
+    border-bottom: 1px solid;
+    border-radius: 4px 4px 0 0;
+}
+.form-data{
+    font-size: 16px;
+    font-weight:600;
+}
+.site-name{
+    font-size: 32px;
+    font-style:italic;
+    font-weight: bold;
+}
+.smart{
+    color:#283593;
+
+}
+.shop{
+    color:green;
+}
+
+
+
+
+

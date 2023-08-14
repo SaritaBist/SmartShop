@@ -110,7 +110,7 @@
                 </div>
               
               
-                    <div class="col-sm-4">
+                <div class="col-sm-4">
                     <div class="card"  onclick="window.location='viewproduct.jsp'" data-bs-toggle="modal" data-bs-target="#addproduct">
                         <div class="card-body">
                             <div class="container">
@@ -121,7 +121,32 @@
                         </div>
                     </div>
                 </div>
-            </div 
+            </div>
+                            
+            <div class="row mt-4 text-center">
+                <div class="col-sm-4">
+                    <div class="card"  onclick="window.location='vieworder.jsp'" >
+                        <div class="card-body">
+                            <div class="container">
+                                <img  style="max-width:100px" class="img-fluid " src="Images/order.jpg" alt="view order">
+                            </div>
+
+                            <h3 class="text-muted">View Order</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card"  onclick="window.location='viewreview.jsp'" >
+                        <div class="card-body">
+                            <div class="container">
+                                <img  style="max-width:100px" class="img-fluid " src="Images/reviews.jpeg" alt="view order">
+                            </div>
+
+                            <h3 class="text-muted">View Review</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
             <!-- Modal  for add category-->

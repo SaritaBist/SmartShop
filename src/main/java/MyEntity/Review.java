@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package MyEntity;
 
 import java.util.Date;
@@ -21,28 +18,34 @@ import javax.persistence.Table;
  * @author Sarita
  */
 @Entity
-@Table(name="Product_review")
 public class Review {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-   private int review_id;
-   private int rating;
-   private String review_text;
-   private Date review_date;
-   
-   @ManyToOne
-   private Product product;
-   
-    @ManyToOne
-    private Users user;
+    private int review_id;
+    private String user_name;
+    private int rating;
+    private String review_text;
+    private Date review_date;
+    private int product_id;
 
-    public int getReview_id() {
-        return review_id;
+    public Review() {
     }
 
-    public void setReview_id(int review_id) {
-        this.review_id = review_id;
+    public Review(String user_name, int rating, String review_text, Date review_date, int product_id) {
+        this.user_name = user_name;
+        this.rating = rating;
+        this.review_text = review_text;
+        this.review_date = review_date;
+        this.product_id = product_id;
+    }
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public int getRating() {
@@ -69,78 +72,16 @@ public class Review {
         this.review_date = review_date;
     }
 
-    public Product getProduct() {
-        return product;
+    public int getProduct_id() {
+        return product_id;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public Users getUser() {
-        return user;
-    }
-
-    public void setUser(Users user) {
-        this.user = user;
+    public void setProduct_id(int product_id) {
+        this.product_id = product_id;
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Review{");
-        sb.append("review_id=").append(review_id);
-        sb.append(", rating=").append(rating);
-        sb.append(", review_text=").append(review_text);
-        sb.append(", review_date=").append(review_date);
-        sb.append(", product=").append(product);
-        sb.append(", user=").append(user);
-        sb.append('}');
-        return sb.toString();
+        return "Review{" + "user_name=" + user_name + ", rating=" + rating + ", review_text=" + review_text + ", review_date=" + review_date + ", product_id=" + product_id + '}';
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 41 * hash + this.review_id;
-        hash = 41 * hash + this.rating;
-        hash = 41 * hash + Objects.hashCode(this.review_text);
-        hash = 41 * hash + Objects.hashCode(this.review_date);
-        hash = 41 * hash + Objects.hashCode(this.product);
-        hash = 41 * hash + Objects.hashCode(this.user);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Review other = (Review) obj;
-        if (this.review_id != other.review_id) {
-            return false;
-        }
-        if (this.rating != other.rating) {
-            return false;
-        }
-        if (!Objects.equals(this.review_text, other.review_text)) {
-            return false;
-        }
-        if (!Objects.equals(this.review_date, other.review_date)) {
-            return false;
-        }
-        if (!Objects.equals(this.product, other.product)) {
-            return false;
-        }
-        return Objects.equals(this.user, other.user);
-    }
-    
-    
-   
 }

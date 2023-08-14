@@ -4,21 +4,17 @@
  */
 package MyEntity;
 
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 /**
  *
  * @author Sarita
  */
 @Entity
-@Table(name="Users")
 public class Users {
    @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -39,8 +35,21 @@ public class Users {
     @Column(name="user_type")
     private String userType;
     
-    @OneToMany(mappedBy="Users")
-    private List<Review> reviews;
+    
+
+    public Users(){
+        
+    }
+
+    public Users(String userName, String userEmail, String userPassword, String userPhone, String userPic, String userAddress, String userType) {
+        this.userName = userName;
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
+        this.userPhone = userPhone;
+        this.userPic = userPic;
+        this.userAddress = userAddress;
+        this.userType = userType;
+    }
 
     public int getUserId() {
         return userId;
@@ -105,49 +114,5 @@ public class Users {
     public void setUserType(String userType) {
         this.userType = userType;
     }
-
-    public Users(String userName, String userEmail, String userPassword, String userPhone, String userPic, String userAddress, String userType) {
-        this.userName = userName;
-        this.userEmail = userEmail;
-        this.userPassword = userPassword;
-        this.userPhone = userPhone;
-        this.userPic = userPic;
-        this.userAddress = userAddress;
-        this.userType = userType;
-    }
-
-    public Users() {
-        
-    }
-
-    public List<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Users{");
-        sb.append("userId=").append(userId);
-        sb.append(", userName=").append(userName);
-        sb.append(", userEmail=").append(userEmail);
-        sb.append(", userPassword=").append(userPassword);
-        sb.append(", userPhone=").append(userPhone);
-        sb.append(", userPic=").append(userPic);
-        sb.append(", userAddress=").append(userAddress);
-        sb.append(", userType=").append(userType);
-        sb.append(", reviews=").append(reviews);
-        sb.append('}');
-        return sb.toString();
-    }
-    
-    
-     
-
-   
-    
+  
 }

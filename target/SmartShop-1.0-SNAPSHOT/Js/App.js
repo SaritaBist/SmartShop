@@ -1,3 +1,4 @@
+
 function add_to_cart( pid, pname, price)
 {
    let cart= localStorage.getItem("cart");
@@ -46,7 +47,6 @@ function updateCart()
 {
     let cartstring=localStorage.getItem("cart");
     let cart=JSON.parse(cartstring);
-    console.log(cart);
     if(cart===null || cart.length===0)
     {
       console.log("Cart is empty");
@@ -97,7 +97,6 @@ function removeItem(id)
     console.log(id);
     let cartstring=localStorage.getItem("cart");
     let cart=JSON.parse(cartstring);
-    console.log(cart);
     let newcart=cart.filter(item=>item.productId!==id);
     localStorage.setItem("cart",JSON.stringify(newcart));
     console.log(newcart);
@@ -112,4 +111,40 @@ function gotoCheckout()
 {
     window.location="order.jsp"
 }
+
+function makeOrder(){
+    let cartData = JSON.parse(localStorage.getItem('cart')); 
+    let email = $("#email").val(); 
+    let name = $("#name").val(); 
+    let address = $("#address").val(); 
+    let number = $("#number").val(); 
+    let city = $("#city").val(); 
+    let payment_method = $("#payment_method").val(); 
+    $.ajax({
+        type: "POST",
+        url: "Orderservlet",
+        data: { 
+            cart: JSON.stringify(cartData),
+            email: email,
+            name: name,
+            address: address,
+            number: number,
+            city:city,
+            payment_method: payment_method
+        },
+
+        success: function(response) {
+            localStorage.clear();
+            updateCart();
+            swal("Done!", "Order Sucessfully", "success");
+//            window.location = "order.jsp";
+        },
+        error: function(xhr, status, error) {
+          
+            
+        }
+    });
+
+}
+
 

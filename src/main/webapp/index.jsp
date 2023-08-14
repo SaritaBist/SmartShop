@@ -24,8 +24,7 @@
         <%@include file="Component/Navbar.jsp" %>
 
 
-        <%   
-            String c = request.getParameter("category");
+        <%            String c = request.getParameter("category");
             ProductDao pdo = new ProductDao(FactoryProvider.getFactory());
             List<Product> plist = null;
             if (c == null) {
@@ -96,44 +95,47 @@
             <div class="row mt-4 mx-3">
 
                 <!--            category-->
-<!--                <div class="col-md-4">
+                <!--                <div class="col-md-4">
+                
+                                    <div class="list_group mt-4">
+                                        <a href="index.jsp?category=all" class="list_group_item list_group_utem_action active">
+                                            All products
+                                        </a>
+                <%           for (Category category : clist) {
+                %>
 
-                    <div class="list_group mt-4">
-                        <a href="index.jsp?category=all" class="list_group_item list_group_utem_action active">
-                            All products
-                        </a>
-                        <%           for (Category category : clist) {
-                        %>
-
-                        <a href="index.jsp?category=<%=category.getCatogeryId()%>" class=" m-2   text-center list-group-item list-group-item-action items "><%=category.getCatogeryTitle()%></a>
-                        <%
-                            }
-                        %>
-                    </div>
-                </div>-->
+                <a href="index.jsp?category=<%=category.getCatogeryId()%>" class=" m-2   text-center list-group-item list-group-item-action items "><%=category.getCatogeryTitle()%></a>
+                <%
+                    }
+                %>
+            </div>
+        </div>-->
 
 
                 <!-- show product -->
                 <div class="col-md-10 offset-md-1">
                     <div class="row row-cols-1 row-cols-md-3 g-4 ">
 
-                        <%                            for (Product p : plist) {
+                        <% for (Product p : plist) {
                         %>
 
                         <div class="col">
-                            <div class="card">
-                                <img src="Images/Products/<%=p.getProduct_photo()%>" style=" height: 200px;" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title"><%=p.getProduct_name()%></h5>
-                                    <p class="card-text"><%=handler.get10words(p.getProduct_desc())%></p>
+                                <div class="card ">
+                                    <a style="text-decoration: none;" href="product.jsp?productId=<%= p.getProduct_id()%>">
+                                    <img src="Images/Products/<%=p.getProduct_photo()%>" style=" height: 200px;" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><%=p.getProduct_name()%></h5>
+                                        <p class="card-text"><%=handler.get10words(p.getProduct_desc())%></p>
 
-                                </div>
-                                <div class="card-footer text-center">
-                                    <button class="btn custom_bg text-white" onclick="add_to_cart(<%=p.getProduct_id()%>, '<%=p.getProduct_name()%>',<%=p.getPriceAfterDiscount()%>)">Add to cart</button>
-                                    <button class="btn  btn-outline-success ">&#8377;<%=p.getPriceAfterDiscount()%>/-<span   class="  discount-label">off <%=p.getProduct_discount()%>% </span>
-                                        <span class="discount-label" style="text-decoration: line-through">&#8377 <%=p.getPriceAfterDiscount()%></span></button>
-                                </div>
-                            </div> 
+                                    </div>
+                                </a>
+                                    <div class="card-footer text-center">
+                                        <button class="btn custom_bg text-white" onclick="add_to_cart(<%=p.getProduct_id()%>, '<%=p.getProduct_name()%>',<%=p.getPriceAfterDiscount()%>)">Add to cart</button>
+                                        <button class="btn  btn-outline-success ">&#8377;<%=p.getPriceAfterDiscount()%>/-<span   class="  discount-label">off <%=p.getProduct_discount()%>% </span>
+                                            <span class="discount-label" style="text-decoration: line-through">&#8377 <%=p.getPriceAfterDiscount()%></span></button>
+                                    </div>
+                                </div> 
+                           
                         </div>
                         <%
                             }

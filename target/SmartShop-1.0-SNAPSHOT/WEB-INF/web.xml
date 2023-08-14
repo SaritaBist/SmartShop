@@ -2,47 +2,51 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>Registration</servlet-name>
-        <servlet-class>com.company.servlets.Registration</servlet-class>
+        <servlet-class>servlets.Registration</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.company.servlets.LoginServlet</servlet-class>
+        <servlet-class>servlets.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.company.servlets.LogoutServlet</servlet-class>
+        <servlet-class>servlets.LogoutServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ProductOperationServlet</servlet-name>
-        <servlet-class>com.company.servlets.AddCategoryServlet</servlet-class>
+        <servlet-class>servlets.AddCategoryServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddProductServlet</servlet-name>
-        <servlet-class>com.company.servlets.AddProductServlet</servlet-class>
+        <servlet-class>servlets.AddProductServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddCategoryServlet</servlet-name>
-        <servlet-class>com.company.servlets.AddCategoryServlet</servlet-class>
+        <servlet-class>servlets.AddCategoryServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UpdateProductServlet</servlet-name>
-        <servlet-class>com.company.servlets.UpdateProductServlet</servlet-class>
+        <servlet-class>servlets.UpdateProductServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteProductServlet</servlet-name>
-        <servlet-class>com.company.servlets.DeleteProductServlet</servlet-class>
+        <servlet-class>servlets.DeleteProductServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SearchServlet</servlet-name>
-        <servlet-class>com.company.servlets.SearchServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Orderservlet</servlet-name>
-        <servlet-class>com.company.servlets.Orderservlet</servlet-class>
+        <servlet-class>servlets.SearchServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ViewUserDetailServlet</servlet-name>
-        <servlet-class>com.company.servlets.ViewUserDetailServlet</servlet-class>
+        <servlet-class>servlets.ViewUserDetailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SubmitReview</servlet-name>
+        <servlet-class>servlets.SubmitReview</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Orderservlet</servlet-name>
+        <servlet-class>servlets.Orderservlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Registration</servlet-name>
@@ -81,12 +85,16 @@
         <url-pattern>/SearchServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Orderservlet</servlet-name>
-        <url-pattern>/Orderservlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ViewUserDetailServlet</servlet-name>
         <url-pattern>/ViewUserDetailServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubmitReview</servlet-name>
+        <url-pattern>/SubmitReview</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Orderservlet</servlet-name>
+        <url-pattern>/Orderservlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

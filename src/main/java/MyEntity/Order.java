@@ -8,9 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Product_Order")
+@Table(name = "Product_Order")
 public class Order {
-
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int orderId;
@@ -26,6 +25,44 @@ public class Order {
     private String city;
     @Column(name = "payment_method")
     private String payment_method;
+    @Column(name = "productId")
+    private int productId;
+    @Column(name = "productName")
+    private String productName;
+    @Column(name = "productQuantity")
+    private int productQuantity;
+    @Column(name = "productPrice")
+    private double productPrice;
+
+    public Order() {
+    }
+
+    public Order(int orderId, String email, String name, String address, String phone, String city, String payment_method, int productId, String productName, int productQuantity, double productPrice) {
+        this.orderId = orderId;
+        this.email = email;
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.city = city;
+        this.payment_method = payment_method;
+        this.productId = productId;
+        this.productName = productName;
+        this.productQuantity = productQuantity;
+        this.productPrice = productPrice;
+    }
+
+    public Order(String email, String name, String address, String phone, String city, String payment_method, int productId, String productName, int productQuantity, double productPrice) {
+        this.email = email;
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.city = city;
+        this.payment_method = payment_method;
+        this.productId = productId;
+        this.productName = productName;
+        this.productQuantity = productQuantity;
+        this.productPrice = productPrice;
+    }
 
     public int getOrderId() {
         return orderId;
@@ -83,11 +120,38 @@ public class Order {
         this.payment_method = payment_method;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" + "orderId=" + orderId + ", email=" + email + ", name=" + name + ", address=" + address + ", phone=" + phone + ", city=" + city + ", payment_method=" + payment_method + '}';
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public int getProductQuantity() {
+        return productQuantity;
+    }
+
+    public void setProductQuantity(int productQuantity) {
+        this.productQuantity = productQuantity;
+    }
+
+    public double getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
     }
     
     
-
+     
 }

@@ -41,7 +41,6 @@ public class ProductDao {
         q.setMaxResults(12);
        List<Product> list=q.list();
        return list;
-       
     }
     public List<Product> getProductById(int cid)
     {

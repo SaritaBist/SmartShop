@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.Handler;
 
 import org.hibernate.HibernateException;
@@ -21,7 +18,7 @@ public class FactoryProvider {
         {
             if(factory==null)
             {
-                factory=new Configuration().configure().buildSessionFactory();
+                factory = new Configuration().configure().buildSessionFactory();
                 
            }
         

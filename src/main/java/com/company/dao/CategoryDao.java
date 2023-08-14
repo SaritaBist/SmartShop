@@ -5,6 +5,7 @@
 package com.company.dao;
 
 import MyEntity.Category;
+import static java.rmi.server.LogStream.log;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,30 +26,41 @@ public class CategoryDao {
    {
        this.factory=factory;
    }
-   public int addCategory(Category c)
+   public int addCategory(Category c) 
    {
+       
+      
        Session session=factory.openSession();
        Transaction tx=session.beginTransaction();
+       log("in category dao");
+       System.out.println("Category : " + c );
        int id=(int) session.save(c);
        tx.commit();
        session.close();
+       
        return id;
        
    }
-   public List<Category> getCategoryDetails()
+   public List<Category> getCategoryDetails() 
    {
+       List<Category> list = null;
+       
        Session s=factory.openSession();
        String query="from Category";
        Query q=s.createQuery(query);
-       List<Category> list=q.list();
+       list=q.list();
+       
        return list;
    }
-   public Category getCatogeryById(int cid)
+   public Category getCatogeryById(int cid) 
    {
+       Category cat = null;
+       
        Session s=factory.openSession();
-        Category cat=s.get(Category.class, cid);
+         cat=s.get(Category.class, cid);
         
         s.close();
+        
         return cat;
    }
    

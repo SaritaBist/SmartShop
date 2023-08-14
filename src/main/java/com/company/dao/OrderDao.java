@@ -33,5 +33,27 @@ public class OrderDao {
         return result;
     }
     
+    public void generateOrder(List<Order> o){
+         try {
+            Session session = factory.openSession();
+            Transaction transaction = session.beginTransaction();
+
+            int batchSize = 50; // Number of entities to be persisted in a batch
+
+            for (int i = 0; i < o.size(); i++) {
+                session.persist(o.get(i));
+
+                if (i % batchSize == 0 && i > 0) {
+                    session.flush();
+                    session.clear();
+                }
+            }
+            transaction.commit();
+            session.close();
+             } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+    }
+    
    
 }

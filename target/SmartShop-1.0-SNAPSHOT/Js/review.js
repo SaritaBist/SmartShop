@@ -1,6 +1,8 @@
 var rating_data = 0;
+console.log("Bhuwan pandey");
 
 $("#add_review").click(function () {
+  console.log("add review clicked");
   $("#review_modal").modal("show");
 });
 
@@ -60,8 +62,6 @@ $("#save_review").click(function () {
 
         alert(data);
       },
-    });
-  }
+    });
+  }
 });
-
-

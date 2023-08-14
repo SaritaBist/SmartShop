@@ -93,7 +93,7 @@
                                     <button  type="submit" class="btn btn-primary  mt-3">Register</button>
 
                                 </div>
-                                <p class="mt-3"><string>Already have an account</strong>?<a href="login.jsp">Login in</a>
+                                <p class="mt-3"><strong>Already have an account</strong>?<a href="login.jsp">Login in</a>
                             </form>
                         </div>
                     </div>

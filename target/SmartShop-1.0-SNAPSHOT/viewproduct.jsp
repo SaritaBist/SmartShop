@@ -12,11 +12,6 @@
     List<Product> plist = pd.getProductDetails();
     CategoryDao cd = new CategoryDao(FactoryProvider.getFactory());
     List<Category> clist = cd.getCategoryDetails();
-    
-  
-                                    
-
-
 %>
  
 

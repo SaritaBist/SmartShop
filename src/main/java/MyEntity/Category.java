@@ -27,12 +27,12 @@ public class Category {
     private String catogeryTitle;
     @Column(name="catogery_description")
     private String catogeryDescription;
+    
     @OneToMany(mappedBy="category")
     private List<Product> productList;
 
     public Category() {
     }
-    
 
     public Category(int catogeryId, String catogeryTitle, String catogeryDescription, List<Product> productList) {
         this.catogeryId = catogeryId;
@@ -40,12 +40,9 @@ public class Category {
         this.catogeryDescription = catogeryDescription;
         this.productList = productList;
     }
+    
 
-    public Category(String catogeryTitle, String catogeryDescription, List<Product> productList) {
-        this.catogeryTitle = catogeryTitle;
-        this.catogeryDescription = catogeryDescription;
-        this.productList = productList;
-    }
+    
     
 
     public int getCatogeryId() {
@@ -72,13 +69,7 @@ public class Category {
         this.catogeryDescription = catogeryDescription;
     }
 
-    public List<Product> getProductList() {
-        return productList;
-    }
-
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
-    }
+    
     
     
 }

@@ -31,8 +31,7 @@ public class Product {
     private Category category;
     
    
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private Set<Review> reviews=new HashSet<>();
+    
 
     public Product() {
     }
@@ -123,23 +122,7 @@ public class Product {
         this.category = category;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Product{");
-        sb.append("product_id=").append(product_id);
-        sb.append(", product_name=").append(product_name);
-        sb.append(", product_desc=").append(product_desc);
-        sb.append(", product_photo=").append(product_photo);
-        sb.append(", product_price=").append(product_price);
-        sb.append(", product_discount=").append(product_discount);
-        sb.append(", product_quantity=").append(product_quantity);
-        sb.append(", category=").append(category);
-        sb.append(", reviews=").append(reviews);
-        sb.append('}');
-        return sb.toString();
-    }
-
+    
     
     
     
@@ -149,13 +132,6 @@ public class Product {
         return (int) (this.getProduct_price()-d);
     }
 
-    public Set<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(Set<Review> reviews) {
-        this.reviews = reviews;
-    }
     
     
     

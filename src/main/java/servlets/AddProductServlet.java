@@ -14,10 +14,12 @@ import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import javax.servlet.http.HttpServletRequest;
+
 
 @MultipartConfig
 public class AddProductServlet extends HttpServlet {
@@ -34,7 +36,7 @@ public class AddProductServlet extends HttpServlet {
          int pdiscount=Integer.parseInt(request.getParameter("pdiscount"));
          int pquantity=Integer.parseInt(request.getParameter("pquantity"));
          int cid=Integer.parseInt(request.getParameter("catid"));
-            System.out.println("Multipart data");
+            
          Part part = request.getPart("productName");
 
         
@@ -82,7 +84,9 @@ public class AddProductServlet extends HttpServlet {
           response.sendRedirect("admin.jsp");
         
          
-        }catch(Exception e){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         
     }
     

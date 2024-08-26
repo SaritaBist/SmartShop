@@ -33,7 +33,7 @@ public class DeleteProductServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
            
-            String id=request.getParameter("id");
+            String id=request.getParameter("pid");
             int pid=Integer.parseInt(id);
             ProductDao pd=new ProductDao(FactoryProvider.getFactory());
              pd.deleteProductById(pid);

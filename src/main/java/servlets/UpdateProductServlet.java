@@ -30,16 +30,16 @@ public class UpdateProductServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        try ( PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
             
-            String pid=request.getParameter("pid");
+            String pid=request.getParameter("id");
           
            int id=Integer.parseInt(pid);
-             out.print(id);
+            
           String pname=request.getParameter("ptitle");
-          out.print(pname);
+         
          String pdescription=request.getParameter("pdescription");
-         out.println(pdescription);
+         
          double pprice=Double.parseDouble(request.getParameter("pprice"));
          
          int pdiscount=Integer.parseInt(request.getParameter("pdiscount"));
@@ -86,12 +86,16 @@ public class UpdateProductServlet extends HttpServlet {
          }
            
            
-          HttpSession session=request.getSession();
-          session.setAttribute("message", "Product Updated Successfully");
-          response.sendRedirect("admin.jsp");
+//          HttpSession session=request.getSession();
+//          session.setAttribute("message", "Product Updated Successfully");
+//          response.sendRedirect("UpdateProduct.jsp");
+
+
+        out.println("Data Updated Successfully");
+
         
-         
-        }
+        
+       
            
         }
        

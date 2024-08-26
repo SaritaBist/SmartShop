@@ -125,14 +125,14 @@
                                     <img src="Images/Products/<%=p.getProduct_photo()%>" style=" height: 200px;" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title"><%=p.getProduct_name()%></h5>
-                                        <p class="card-text"><%=handler.get10words(p.getProduct_desc())%></p>
+<!--                                        <p class="card-text"><%=handler.get10words(p.getProduct_desc())%></p>-->
 
                                     </div>
                                 </a>
                                     <div class="card-footer text-center">
-                                        <button class="btn custom_bg text-white" onclick="add_to_cart(<%=p.getProduct_id()%>, '<%=p.getProduct_name()%>',<%=p.getPriceAfterDiscount()%>)">Add to cart</button>
+<!--                                        <button class="btn custom_bg text-white" onclick="add_to_cart(<%=p.getProduct_id()%>, '<%=p.getProduct_name()%>',<%=p.getPriceAfterDiscount()%>)">Add to cart</button>-->
                                         <button class="btn  btn-outline-success ">&#8377;<%=p.getPriceAfterDiscount()%>/-<span   class="  discount-label">off <%=p.getProduct_discount()%>% </span>
-                                            <span class="discount-label" style="text-decoration: line-through">&#8377 <%=p.getPriceAfterDiscount()%></span></button>
+                                            <span class="discount-label" style="text-decoration: line-through">&#8377 <%=p.getProduct_price()  %></span></button>
                                     </div>
                                 </div> 
                            

@@ -7,6 +7,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 
 public class OrderDao {
@@ -53,6 +54,15 @@ public class OrderDao {
              } catch (Exception ex) {
                 ex.printStackTrace();
             }
+    }
+    
+    public List<Order> getOrderDetails()
+    {
+      Session s=factory.openSession();
+       String query="from Order";
+       Query q=s.createQuery(query);
+       List<Order> list=q.list();
+       return list;
     }
     
    

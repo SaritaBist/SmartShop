@@ -60,7 +60,7 @@
                 </div>
                 <!--                // second col-->
                 <div class="col-xl-4 col-sm-6 ">
-                    <div class="card">
+                    <div class="card" onclick="window.location='viewcategory.jsp'">
                         <div class="card-body">
                             <div class="container">
                                 <img style="max-width:100px" class="img-fluid " src="Images/catogery.png" alt="user">
@@ -135,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
+<!--                <div class="col-sm-4">
                     <div class="card"  onclick="window.location='viewreview.jsp'" >
                         <div class="card-body">
                             <div class="container">
@@ -145,7 +145,7 @@
                             <h3 class="text-muted">View Review</h3>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
 
 

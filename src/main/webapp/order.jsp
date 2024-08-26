@@ -81,7 +81,7 @@
                                     </select>
                                </div>
                                <div class="my-3 d-flex justify-content-center ">
-                                   <button type="button" onclick="makeOrder()" class="btn btn-warning w-25 mx-3">Cash On Delivery</button>
+                                   <button type="button" onclick="makeOrder()" class="btn btn-warning w-25 mx-3">Order Now</button>
                                    <!--<button type="submit" class="btn"><img style="max-width: 8rem; max-height: 3rem" src="Images/khalti logo.jpeg"></button>-->
                                </div>
 <!--                                  <div class="mb-0">

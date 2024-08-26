@@ -5,6 +5,7 @@
 package com.company.dao;
 
 import MyEntity.Category;
+import MyEntity.Product;
 import static java.rmi.server.LogStream.log;
 import java.util.List;
 import org.hibernate.Session;
@@ -63,6 +64,52 @@ public class CategoryDao {
         
         return cat;
    }
+   public Category getCatogeryByProductId(int pid) 
+   {
+       Category cat = null;
+       
+       Session s=factory.openSession();
+       cat=s.get(Category.class, pid);
+        
+        s.close();
+        
+        return cat;
+   }
+
+//   public Category getcategoryByProductId(int pid)
+//    {
+//        Session s=factory.openSession();
+//        String query="from Product p where  p.category.catogeryId = :x";
+//        Query q=s.createQuery(query);
+//        
+//         q.setParameter("x", pid);
+//         List<Product> product=q.list();
+//       return Category;
+//        
+//    }
    
+   
+   public boolean UpdateCategory(Category c) {
+        Session s = factory.openSession();
+        Category category = s.get(Category.class, c.getCatogeryId());
+        category.setCatogeryTitle(c.getCatogeryTitle());
+        category.setCatogeryDescription(c.getCatogeryDescription());
+        Transaction tx = s.beginTransaction();
+        s.update(category);
+        tx.commit();
+        s.close();
+        return true;
+
+    }
+   public boolean deleteCategoryById(int id) {
+        Session s = factory.openSession();
+        Transaction tx = s.beginTransaction();
+        Category c = s.get(Category.class, id);
+        s.delete(c);
+        tx.commit();
+        s.close();
+        return true;
+
+    }
     
 }

@@ -85,7 +85,8 @@
                     <p class="lead fw-bolder">
                      
                     </p>
-                    <h3 class="display-6 fw-bold my-4">Rs <%= product.getProduct_price() %></h3>
+                    <h3 class="display-6 fw-bold my-4">Rs <%= product.getPriceAfterDiscount() %></h3>
+                    
                     <p class="lead text-justify">
                         <%= product.getProduct_desc() %>
                     </p>
